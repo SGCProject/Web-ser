@@ -1,0 +1,236 @@
+!SESSION 2014-08-05 13:30:17.974 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.8.0
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2014-08-05 13:51:16.759
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2014-08-05 13:51:23.690
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2014-08-05 13:51:31.348
+!MESSAGE Module trainRestService published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2014-08-05 13:56:04.010
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2014-08-05 13:56:04.413
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2014-08-05 13:56:04.416
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2014-08-05 13:56:04.421
+!MESSAGE Server Shutdown Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2014-08-05 13:56:05.304
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2014-08-05 13:56:11.412
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2014-08-05 14:01:33.108
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2014-08-05 14:01:33.427
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2014-08-05 14:01:34.318
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2014-08-05 14:01:40.430
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2014-08-05 14:03:03.368
+!MESSAGE Module trainRestService published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2014-08-05 14:05:22.299
+!MESSAGE 1 files modified in module trainRestService
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2014-08-05 14:05:38.094
+!MESSAGE 1 files modified in module trainRestService
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2014-08-05 14:05:39.378
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2014-08-05 14:05:39.676
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2014-08-05 14:05:39.691
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2014-08-05 14:05:39.694
+!MESSAGE Server Shutdown Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2014-08-05 14:05:40.574
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2014-08-05 14:05:47.028
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2014-08-05 14:06:57.107
+!MESSAGE 1 files modified in module trainRestService
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2014-08-05 14:07:03.466
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2014-08-05 14:07:03.781
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2014-08-05 14:07:04.697
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2014-08-05 14:07:10.709
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2014-08-05 14:10:27.193
+!MESSAGE 3 files modified in module trainRestService
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2014-08-05 14:10:30.478
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2014-08-05 14:10:30.790
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2014-08-05 14:10:31.684
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2014-08-05 14:10:38.097
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2014-08-05 14:13:35.695
+!MESSAGE 1 files modified in module trainRestService
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2014-08-05 14:13:49.131
+!MESSAGE 3 files modified in module trainRestService
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2014-08-05 14:13:58.527
+!MESSAGE Module trainRestService published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2014-08-05 14:17:49.010
+!MESSAGE Module trainRestService published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2014-08-05 14:18:54.733
+!MESSAGE Module trainRestService published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2014-08-05 14:19:20.349
+!MESSAGE 3 files modified in module trainRestService
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2014-08-05 14:19:24.806
+!MESSAGE Module trainRestService published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2014-08-05 15:00:27.696
+!MESSAGE 1 files modified in module trainRestService
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2014-08-05 15:01:11.558
+!MESSAGE 1 files modified in module trainRestService
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2014-08-05 15:02:11.760
+!MESSAGE Module trainRestService published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2014-08-05 15:05:21.680
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2014-08-05 15:05:22.039
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2014-08-05 15:05:22.953
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2014-08-05 15:05:29.364
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2014-08-05 15:10:24.481
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2014-08-05 15:10:24.921
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2014-08-05 15:10:25.814
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2014-08-05 15:10:43.136
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2014-08-05 15:13:31.613
+!MESSAGE 1 files modified in module trainRestService
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2014-08-05 15:25:28.623
+!MESSAGE 1 files modified in module trainRestService
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2014-08-05 15:27:31.116
+!MESSAGE 1 files modified in module trainRestService
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2014-08-05 15:29:56.823
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2014-08-05 15:29:57.236
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2014-08-05 15:29:58.132
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2014-08-05 15:30:05.054
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2014-08-05 15:33:02.979
+!MESSAGE 1 files modified in module trainRestService
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2014-08-05 15:33:31.068
+!MESSAGE 1 files modified in module trainRestService
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2014-08-05 15:34:47.152
+!MESSAGE 1 files modified in module trainRestService
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2014-08-05 15:42:19.063
+!MESSAGE 1 files modified in module trainRestService
+!SESSION 2014-08-05 15:45:07.120 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.8.0
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2014-08-05 15:45:23.833
+!MESSAGE Module trainRestService published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2014-08-05 15:45:25.210
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2014-08-05 15:45:32.330
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2014-08-05 15:51:38.724
+!MESSAGE 1 files modified in module trainRestService
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2014-08-05 15:51:56.949
+!MESSAGE 1 files modified in module trainRestService
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2014-08-05 15:52:01.879
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2014-08-05 15:52:02.288
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2014-08-05 15:52:03.191
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2014-08-05 15:52:10.106
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2014-08-05 15:53:03.094
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2014-08-05 15:53:03.395
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2014-08-05 15:53:03.398
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2014-08-05 15:53:03.401
+!MESSAGE Server Shutdown Succeeded

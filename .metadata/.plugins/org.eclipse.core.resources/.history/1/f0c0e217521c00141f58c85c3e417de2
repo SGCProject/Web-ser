@@ -1,0 +1,9 @@
+package demo.webservice;
+
+public interface WebserviceInterface {
+	
+	public String testPostService();
+	
+	public String testPostService();
+
+}

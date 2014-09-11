@@ -1,0 +1,71 @@
+package demo.webservice;
+
+import java.io.StringWriter;
+import java.io.Writer;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.ws.rs.QueryParam;
+
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+
+public class Webservice implements WebserviceInterface {
+	private static transient Logger log = LogManager.getLogger(Webservice.class);
+	
+	ObjectMapper mapper = new ObjectMapper();
+	
+	@Override
+	public String testGetService(@QueryParam("prama1") String param1, @QueryParam("prama2") String param2) {
+		log.debug("Enter RegisterUser");
+		StringBuilder sb = new StringBuilder();
+		Map map = new HashMap();
+		try {
+			if(param1.equals("a") && param2.equals("b")) {
+				map.put("result", "y");
+			} else {
+				map.put("result", "n");
+			}
+
+			Writer strWriter = new StringWriter();
+			mapper.writeValue(strWriter, map);
+			sb.append(strWriter.toString());	
+		} catch (Exception e) {
+			log.error("Error registerUser", e);
+			map.put("result", "N");
+			map.put("key", "เกิดความผิดพลาดในการ registerUser");
+		} finally {
+			log.debug("Exit registerUser");
+		}
+		return sb.toString();
+	}
+
+	@Override
+	public String testPostService(String param1, String param2) {
+		log.debug("Enter RegisterUser");
+		StringBuilder sb = new StringBuilder();
+		Map map = new HashMap();
+		try {
+			if(param1.equals("a") && param2.equals("b")) {
+				map.put("result", "y");
+			} else {
+				map.put("result", "n");
+			}
+
+			Writer strWriter = new StringWriter();
+			mapper.writeValue(strWriter, map);
+			sb.append(strWriter.toString());	
+		} catch (Exception e) {
+			log.error("Error registerUser", e);
+			map.put("result", "N");
+			map.put("key", "เกิดความผิดพลาดในการ registerUser");
+		} finally {
+			log.debug("Exit registerUser");
+		}
+		return sb.toString();
+	}
+
+}

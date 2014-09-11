@@ -1,0 +1,25 @@
+package demo.webservice;
+
+
+import javax.ws.rs.FormParam;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+
+@Path("/callservice")
+public interface WebserviceInterface {
+	
+	@Path("/testGetService")
+	@Produces(MediaType.APPLICATION_JSON)
+	@GET
+	public String testGetService(@QueryParam("pram1") String pram1, @QueryParam("pram2") String pram2);
+	
+	@Path("/testPostService")
+	@Produces(MediaType.APPLICATION_JSON)
+	@POST
+	public String testPostService(@FormParam("pram1") String param1, @FormParam("pram2") String param2);	
+
+}

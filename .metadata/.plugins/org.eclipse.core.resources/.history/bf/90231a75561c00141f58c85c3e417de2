@@ -1,0 +1,23 @@
+package demo.webservice;
+
+
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+@Path("/callservice")
+public interface WebserviceInterface {
+	
+	@Path("/testPostService")
+	@Produces(MediaType.APPLICATION_JSON)
+	@POST
+	public String testPostService(String param1, String param2);
+	
+	@Path("/testPostService")
+	@Produces(MediaType.APPLICATION_JSON)
+	@GET
+	public String testPostService2(String param1, String param2);	
+
+}

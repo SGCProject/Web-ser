@@ -1,0 +1,10 @@
+package demo.webservice;
+
+public class Webservice implements WebserviceInterface {
+
+	@Override
+	public String testPostService(String param1, String param2) {
+		return "return";
+	}
+
+}

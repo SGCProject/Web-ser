@@ -1,0 +1,22 @@
+!SESSION 2557-07-09 14:53:08.287 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.7.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2557-07-09 15:05:59.102
+!MESSAGE Module TestWebServiceREST published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2557-07-09 15:06:00.320
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2557-07-09 15:06:09.624
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842776 2557-07-09 15:09:53.498
+!MESSAGE Server shutting down
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2557-07-09 15:09:53.774
+!MESSAGE Server processes have been terminated.
