@@ -34,10 +34,10 @@ public class Jdbc {
         } catch (NamingException ex) {
             log.error(ex.toString());
             Logger.getLogger(Jdbc.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
         } catch (SQLException ex) {
             log.error(ex.toString());
-            Logger.getLogger(Jdbc.class.getName()).log(Level.SEVERE, null, ex);            
-        } finally {
+            Logger.getLogger(Jdbc.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
 
