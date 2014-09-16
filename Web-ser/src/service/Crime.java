@@ -21,7 +21,7 @@ public class Crime {
     private static final org.slf4j.Logger log = LoggerFactory.getLogger(Crime.class);
 
     @Path("/query")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
     @GET
     public String query() {
         try {
@@ -33,7 +33,17 @@ public class Crime {
             while (jrs.next()) {
                 JSONObject jo = new JSONObject();
                 jo.append("pk", jrs.getLong("pk"));
-                jo.append("name", jrs.getString("name"));
+                jo.append("crime_id", jrs.getString("crime_id"));
+                jo.append("crime_date", jrs.getString("crime_date"));
+                jo.append("crime_lat", jrs.getString("crime_lat"));
+                jo.append("crime_lng", jrs.getString("crime_lng"));
+                jo.append("crime_detail", jrs.getString("crime_detail"));
+                jo.append("crime_level", jrs.getString("crime_level"));
+                jo.append("area_pk", jrs.getString("area_pk"));
+                jo.append("type_pk", jrs.getString("type_pk"));
+                jo.append("place_pk", jrs.getString("place_pk"));
+                jo.append("user_pk", jrs.getString("user_pk"));
+                jo.append("time_pk", jrs.getString("time_pk"));
                 js.put(jo);
             }
             jrs.close();

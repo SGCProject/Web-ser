@@ -21,14 +21,14 @@ public class Type {
     private static final org.slf4j.Logger log = LoggerFactory.getLogger(Type.class);
 
     @Path("/test")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
     @GET
     public String test() {
-        return "test";
+        return "ทดสอบ";
     }
 
     @Path("/query")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
     @GET
     public String query() {
         try {
@@ -57,22 +57,22 @@ public class Type {
     }
 
     @Path("/insert")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
     @GET
-    public Boolean insert(@QueryParam("name") String name) {
+    public String insert(@QueryParam("name") String name) {
         try {
             JdbcRowSet jrs = Jdbc.getJrs();
             jrs.setCommand("SELECT * FROM type WHERE 1 = 2");
             jrs.execute();
             jrs.moveToInsertRow();
-            jrs.setString("name", name);
+            jrs.updateString("name", name);
             jrs.insertRow();
             jrs.close();
 
-            return true;
+            return "true";
         } catch (SQLException ex) {
             Logger.getLogger(Type.class.getName()).log(Level.SEVERE, null, ex);
-            return false;
+            return "false";
         }
     }
 }
