@@ -2,6 +2,8 @@ package service;
 
 import database.Jdbc;
 import java.sql.SQLException;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.sql.rowset.JdbcRowSet;
@@ -33,16 +35,18 @@ public class Type {
     public String query() {
         try {
             JSONArray js = new JSONArray();
+            Map<String, String> map;
 
             JdbcRowSet jrs = Jdbc.getJrs();
             jrs.setCommand("SELECT * FROM type");
             jrs.execute();
             while (jrs.next()) {
-                JSONObject jo = new JSONObject();
-                jo.append("pk", jrs.getLong("pk"));
-                jo.append("name", jrs.getString("name"));
-                js.put(jo);
+                map = new LinkedHashMap<String, String>();
+                map.put("pk", jrs.getLong("pk") + "");
+                map.put("name", jrs.getString("name") + "");   
+                js.put(map);
             }
+            
             jrs.close();
 
             log.debug(js.toString());
@@ -50,10 +54,7 @@ public class Type {
         } catch (SQLException ex) {
             Logger.getLogger(Type.class.getName()).log(Level.SEVERE, null, ex);
             return ex.toString();
-        } catch (JSONException ex) {
-            Logger.getLogger(Type.class.getName()).log(Level.SEVERE, null, ex);
-            return ex.toString();
-        }
+        }        
     }
 
     @Path("/insert")
