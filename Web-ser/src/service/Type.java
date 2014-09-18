@@ -43,10 +43,10 @@ public class Type {
             while (jrs.next()) {
                 map = new LinkedHashMap<String, String>();
                 map.put("pk", jrs.getLong("pk") + "");
-                map.put("name", jrs.getString("name") + "");   
+                map.put("name", jrs.getString("name") + "");
                 js.put(map);
             }
-            
+
             jrs.close();
 
             log.debug(js.toString());
@@ -54,7 +54,7 @@ public class Type {
         } catch (SQLException ex) {
             Logger.getLogger(Type.class.getName()).log(Level.SEVERE, null, ex);
             return ex.toString();
-        }        
+        }
     }
 
     @Path("/insert")
@@ -76,4 +76,25 @@ public class Type {
             return "false";
         }
     }
+
+    @Path("/delete")
+    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+    @GET
+    public String delete(@QueryParam("pk") Long pk) {
+        System.out.println(pk);
+        try {
+            JdbcRowSet jrs = Jdbc.getJrs();
+            jrs.setCommand("SELECT * FROM type WHERE pk = " + pk);
+            jrs.execute();
+            jrs.last();
+            jrs.deleteRow();
+            jrs.close();
+
+            return "true";
+        } catch (SQLException ex) {
+            Logger.getLogger(Type.class.getName()).log(Level.SEVERE, null, ex);
+            return "false";
+        }
+    }
+
 }
