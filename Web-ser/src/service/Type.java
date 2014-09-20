@@ -1,13 +1,17 @@
 package service;
 
 import database.Jdbc;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.sql.rowset.JdbcRowSet;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
@@ -21,6 +25,7 @@ import org.slf4j.LoggerFactory;
 public class Type {
 
     private static final org.slf4j.Logger log = LoggerFactory.getLogger(Type.class);
+    private String sql;
 
     @Path("/test")
     @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
@@ -31,10 +36,11 @@ public class Type {
 
     @Path("/query")
     @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
-    @GET
+    @POST
     public String query() {
+        JSONObject jo = new JSONObject();
         try {
-            JSONArray js = new JSONArray();
+            JSONArray records = new JSONArray();
             Map<String, String> map;
 
             JdbcRowSet jrs = Jdbc.getJrs();
@@ -44,14 +50,19 @@ public class Type {
                 map = new LinkedHashMap<String, String>();
                 map.put("pk", jrs.getLong("pk") + "");
                 map.put("name", jrs.getString("name") + "");
-                js.put(map);
+                records.put(map);
             }
 
             jrs.close();
 
-            log.debug(js.toString());
-            return js.toString();
+            jo.put("Result", "OK");
+            jo.put("Records", records);
+
+            return jo.toString();
         } catch (SQLException ex) {
+            Logger.getLogger(Type.class.getName()).log(Level.SEVERE, null, ex);
+            return ex.toString();
+        } catch (JSONException ex) {
             Logger.getLogger(Type.class.getName()).log(Level.SEVERE, null, ex);
             return ex.toString();
         }
@@ -59,8 +70,8 @@ public class Type {
 
     @Path("/insert")
     @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
-    @GET
-    public String insert(@QueryParam("name") String name) {
+    @POST
+    public String insert(@FormParam("name") String name) {
         try {
             JdbcRowSet jrs = Jdbc.getJrs();
             jrs.setCommand("SELECT * FROM type WHERE 1 = 2");
@@ -68,20 +79,54 @@ public class Type {
             jrs.moveToInsertRow();
             jrs.updateString("name", name);
             jrs.insertRow();
-            jrs.close();
+            jrs.next();
 
-            return "true";
+            JSONObject jo = new JSONObject();
+            JSONObject row = new JSONObject();
+
+            row.put("pk", jrs.getLong("pk"));
+            row.put("name", jrs.getString("name"));
+
+            jo.put("Result", "OK");
+            jo.put("Record", row);
+
+            jrs.close();
+            System.out.println(jo);
+            return jo.toString();
         } catch (SQLException ex) {
+            Logger.getLogger(Type.class.getName()).log(Level.SEVERE, null, ex);
+            return "false";
+        } catch (JSONException ex) {
             Logger.getLogger(Type.class.getName()).log(Level.SEVERE, null, ex);
             return "false";
         }
     }
 
+    @Path("/update")
+    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+    @POST
+    public String update(@FormParam("pk") Long pk, @FormParam("name") String name) {
+        sql = "update type set name = ? where pk = ?;";
+        try {
+            Connection connect = Jdbc.getConnect();
+            PreparedStatement pstmt = connect.prepareStatement(sql);
+            pstmt.setString(1, name);
+            pstmt.setLong(2, pk);
+            pstmt.executeUpdate();
+            pstmt.close();
+            connect.close();
+            return "{\"Result\":\"OK\"}";
+        } catch (SQLException ex) {
+            Logger.getLogger(Type.class.getName()).log(Level.SEVERE, null, ex);
+            return "{\"Result\":\"ERROR\"}";
+        }
+
+    }
+
     @Path("/delete")
     @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
-    @GET
-    public String delete(@QueryParam("pk") Long pk) {
-        System.out.println(pk);
+    @POST
+    public String delete(@FormParam("pk") Long pk) {
         try {
             JdbcRowSet jrs = Jdbc.getJrs();
             jrs.setCommand("SELECT * FROM type WHERE pk = " + pk);
@@ -90,7 +135,7 @@ public class Type {
             jrs.deleteRow();
             jrs.close();
 
-            return "true";
+            return query();
         } catch (SQLException ex) {
             Logger.getLogger(Type.class.getName()).log(Level.SEVERE, null, ex);
             return "false";
