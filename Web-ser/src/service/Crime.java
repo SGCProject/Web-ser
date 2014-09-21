@@ -1,14 +1,18 @@
 package service;
 
 import database.Jdbc;
+import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.sql.rowset.JdbcRowSet;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -22,33 +26,40 @@ public class Crime {
 
     @Path("/query")
     @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
-    @GET
+    @POST
     public String query() {
-        try {
-            JSONArray js = new JSONArray();
+        try {            
+            JSONArray records = new JSONArray();
+Map<String, String> map;
 
-            JdbcRowSet jrs = Jdbc.getJrs();
-            jrs.setCommand("SELECT * FROM crime");
-            jrs.execute();
-            while (jrs.next()) {
-                JSONObject jo = new JSONObject();
-                jo.append("pk", jrs.getLong("pk"));
-                jo.append("crime_id", jrs.getString("crime_id"));
-                jo.append("crime_date", jrs.getString("crime_date"));
-                jo.append("crime_lat", jrs.getString("crime_lat"));
-                jo.append("crime_lng", jrs.getString("crime_lng"));
-                jo.append("crime_detail", jrs.getString("crime_detail"));
-                jo.append("crime_level", jrs.getString("crime_level"));
-                jo.append("area_pk", jrs.getString("area_pk"));
-                jo.append("type_pk", jrs.getString("type_pk"));
-                jo.append("place_pk", jrs.getString("place_pk"));
-                jo.append("user_pk", jrs.getString("user_pk"));
-                jo.append("time_pk", jrs.getString("time_pk"));
-                js.put(jo);
+            Connection connect = Jdbc.getConnect();
+            Statement stmt = connect.createStatement();
+            String sql = "SELECT * FROM crime";
+            ResultSet rs = stmt.executeQuery(sql);
+
+            while (rs.next()) {
+                map = new LinkedHashMap<String, String>();
+                map.put("pk", rs.getLong("pk") + "");
+                map.put("crime_id", rs.getString("crime_id"));
+                map.put("crime_date", rs.getString("crime_date"));
+                map.put("crime_lat", rs.getString("crime_lat"));
+                map.put("crime_lng", rs.getString("crime_lng"));
+                map.put("crime_detail", rs.getString("crime_detail"));
+                map.put("crime_level", rs.getString("crime_level"));
+                map.put("area_pk", rs.getString("area_pk"));
+                map.put("type_pk", rs.getString("type_pk"));
+                map.put("place_pk", rs.getString("place_pk"));
+                map.put("user_pk", rs.getString("user_pk"));
+                map.put("time_pk", rs.getString("time_pk"));
+                records.put(map);
             }
-            jrs.close();
-
-            log.debug(js.toString());
+            rs.close();
+            connect.close();
+            
+           JSONObject js = new JSONObject();
+           js.put("Result", "OK");
+           js.put("Records", records);
+                       
             return js.toString();
         } catch (SQLException ex) {
             Logger.getLogger(Type.class.getName()).log(Level.SEVERE, null, ex);
